@@ -6,6 +6,7 @@
 require('./db');
 
 const express = require('express');
+const helmet = require('helmet');
 const http = require('http');
 const path = require('path');
 const engine = require('ejs-locals');
@@ -18,6 +19,7 @@ const errorHandler = require('errorhandler');
 const static = require('serve-static');
 
 const app = express();
+app.use(helmet());
 const routes = require('./routes');
 
 // All environments

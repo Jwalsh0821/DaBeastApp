@@ -9,4 +9,6 @@ RUN npm update
 RUN npm install
 EXPOSE 3001
 EXPOSE 9229
+RUN chown -R 1000:1000 /usr/src/dabeastapp /tmp/extracted_files
+USER 1000
 ENTRYPOINT ["npm", "start"]
